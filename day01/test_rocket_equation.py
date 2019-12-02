@@ -1,4 +1,4 @@
-from rocket_equation import fuel_calculator, file_list
+from rocket_equation import fuel_calculator, fuel_requirement_sum
 
 
 def test_mass_twelve_returns_two():
@@ -17,5 +17,5 @@ def test_mass_100756_returns_33583():
     assert fuel_calculator(100756) == 33583
 
 
-def test_list_contains_143754():
-    assert file_list() == 143754
+def test_fuel_requirements_contains_int():
+    assert isinstance(fuel_requirement_sum(), int)
