@@ -24,3 +24,11 @@ def test_fuel_requirements_contains_int():
 
 def test_mass_14_with_fuel_mass_returns_2():
     assert module_with_fuel_cost(14) == 2
+
+
+def test_mass_1969_with_fuel_mass_returns_966():
+    assert module_with_fuel_cost(1969) == 966
+
+
+def test_mass_100756_with_fuel_returns_50346():
+    assert module_with_fuel_cost(100756) == 50346
