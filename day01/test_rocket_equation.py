@@ -1,4 +1,5 @@
-from rocket_equation import fuel_calculator, fuel_requirement_sum
+from rocket_equation import fuel_calculator, fuel_requirement_sum, \
+    module_with_fuel_cost
 
 
 def test_mass_twelve_returns_two():
@@ -19,3 +20,7 @@ def test_mass_100756_returns_33583():
 
 def test_fuel_requirements_contains_int():
     assert isinstance(fuel_requirement_sum(), int)
+
+
+def test_mass_14_with_fuel_mass_returns_2():
+    assert module_with_fuel_cost(14) == 2
