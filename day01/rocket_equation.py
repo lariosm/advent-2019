@@ -12,7 +12,7 @@ def fuel_requirement_sum():
 
     with open('input.txt') as file:
         for value in file:
-            fuel_counter += fuel_calculator(int(value.rstrip()))
+            fuel_counter += module_with_fuel_cost(int(value.rstrip()))
     return fuel_counter
 
 
@@ -27,4 +27,4 @@ def module_with_fuel_cost(fuel_mass, fuel_sum=0):
 
 
 if __name__ == '__main__':
-    print(fuel_requirement_sum())  # Part 1
+    print(fuel_requirement_sum())
