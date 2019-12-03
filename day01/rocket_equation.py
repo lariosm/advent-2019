@@ -1,9 +1,6 @@
-import math
-
-
 def fuel_calculator(module_mass):
     """returns amount of fuel needed for a given module"""
-    return math.floor(module_mass / 3) - 2
+    return int(module_mass / 3) - 2
 
 
 def fuel_requirement_sum():
