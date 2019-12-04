@@ -1,0 +1,5 @@
+{
+    "python.pythonPath": "/home/manuel/.local/share/virtualenvs/day02-bgCm_2l_/bin/python",
+    "python.linting.flake8Enabled": true,
+    "python.linting.enabled": true
+}
