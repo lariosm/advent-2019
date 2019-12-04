@@ -18,3 +18,7 @@ def test_three_exists_at_position_seven():
 
 def test_list_operation_returns_int():
     assert isinstance(perform_list_operation(), int)
+
+
+def test_index_zero_is_not_one():
+    assert perform_list_operation() != 1

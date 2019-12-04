@@ -13,15 +13,18 @@ def perform_list_operation():
     intcode_list[2] = 2
 
     # Looping through list, performing operations
-    while False:
+    while True:
         opcode = intcode_list[index_counter]
         input_one = intcode_list[index_counter + 1]
         input_two = intcode_list[index_counter + 2]
+        output_index = intcode_list[index_counter + 3]
 
         if opcode == 1:
-            intcode_list[index_counter + 3] = input_one + input_two
+            intcode_list[output_index] = (intcode_list[input_one] +
+                                          intcode_list[input_two])
         elif opcode == 2:
-            intcode_list[index_counter + 3] = input_one + input_two
+            intcode_list[output_index] = (intcode_list[input_one] *
+                                          intcode_list[input_two])
         elif opcode == 99:
             break
         else:
@@ -29,3 +32,7 @@ def perform_list_operation():
         index_counter += 4  # Steps forward 4 positions
 
     return intcode_list[0]
+
+
+if __name__ == '__main__':
+    print(perform_list_operation())
