@@ -1,3 +1,9 @@
 {
-    "python.pythonPath": "/home/manuel/.local/share/virtualenvs/day04-cqElgRtT/bin/python"
+    "python.pythonPath": "/home/manuel/.local/share/virtualenvs/day04-cqElgRtT/bin/python",
+    "python.testing.pytestArgs": [
+        "."
+    ],
+    "python.testing.unittestEnabled": false,
+    "python.testing.nosetestsEnabled": false,
+    "python.testing.pytestEnabled": true
 }
