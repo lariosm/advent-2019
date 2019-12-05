@@ -18,7 +18,7 @@ def test_digits_never_decrease():
 
 
 def test_value_meets_password_criteria():
-    assert password_criteria(223450)
+    assert password_criteria(223456)
 
 
 def test_possible_password_combo_returns_length():
