@@ -10,6 +10,14 @@ def contains_adjacent_digits(number):
     return False
 
 
+def digit_increase_check(number):
+    digits = list(str(number))
+    for i in range(len(digits) - 1):
+        if(digits[i + 1] <= digits[i]):
+            return True
+    return False
+
+
 def password_criteria():
     puzzle_input = list(map(int, "193651-649729".split("-")))
     for i in range(puzzle_input[0], puzzle_input[1] + 1, 1):
