@@ -35,3 +35,17 @@ def digit_increase_check(number):
 def password_criteria(number):
     return (is_six_digits(number) and contains_adjacent_digits(number) and
             digit_increase_check(number))
+
+
+def contains_special_adjacent_digits(number):
+    digits = list(str(number))
+    for i in range(0, len(digits) - 1, 2):
+        if(digits[i] != digits[i + 1]):
+            return False
+    '''
+    if(digits[0] == digits[1]):
+        if(digits[2] == digits[3]):
+            if(digits[4] == digits[5]):
+                return True
+    '''
+    return True
