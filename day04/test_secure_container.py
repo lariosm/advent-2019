@@ -1,5 +1,5 @@
 from secure_container import is_six_digits, contains_adjacent_digits,\
-    digit_increase_check
+    digit_increase_check, password_criteria
 
 
 def test_six_digit_function_works():
@@ -15,3 +15,7 @@ def test_contains_adjacent_works():
 def test_digits_never_decrease():
     assert digit_increase_check(122567)
     assert digit_increase_check(225434)
+
+
+def test_value_meets_password_criteria():
+    assert password_criteria(648663)

@@ -18,14 +18,20 @@ def digit_increase_check(number):
     return False
 
 
-def password_criteria():
+def password_criteria(number):
+    return (is_six_digits(number) and contains_adjacent_digits(number) and
+            digit_increase_check(number))
+
+
+def possible_password_combinations():
+    count = 0  # Tracks number of passwords meeting criteria in puzzle
     puzzle_input = list(map(int, "193651-649729".split("-")))
     for i in range(puzzle_input[0], puzzle_input[1] + 1, 1):
-        if(i == 193651):
-            print("193651 was read")
-        if(i == 649729):
-            print("649729 was read")
+        if(is_six_digits(i) and contains_adjacent_digits(i) and
+           digit_increase_check(i)):
+            count += 1
+    return count
 
 
 if __name__ == '__main__':
-    password_criteria()
+    print(possible_password_combinations())
