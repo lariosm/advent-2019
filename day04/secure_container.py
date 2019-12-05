@@ -13,9 +13,9 @@ def contains_adjacent_digits(number):
 def digit_increase_check(number):
     digits = list(str(number))
     for i in range(len(digits) - 1):
-        if(digits[i + 1] <= digits[i]):
-            return True
-    return False
+        if(digits[i + 1] < digits[i]):
+            return False
+    return True
 
 
 def password_criteria(number):
@@ -27,8 +27,7 @@ def possible_password_combinations():
     count = 0  # Tracks number of passwords meeting criteria in puzzle
     puzzle_input = list(map(int, "193651-649729".split("-")))
     for i in range(puzzle_input[0], puzzle_input[1] + 1, 1):
-        if(is_six_digits(i) and contains_adjacent_digits(i) and
-           digit_increase_check(i)):
+        if(password_criteria(i)):
             count += 1
     return count
 
