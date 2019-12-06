@@ -1,6 +1,6 @@
 from secure_container import is_six_digits, contains_adjacent_digits,\
     digit_increase_check, password_criteria, possible_password_combinations,\
-    contains_special_adjacent_digits
+    contains_matching_adjacent_digits
 
 
 def test_six_digit_function_works():
@@ -19,7 +19,7 @@ def test_digits_never_decrease():
 
 
 def test_value_meets_password_criteria():
-    assert password_criteria(223456)
+    assert password_criteria(223344)
 
 
 def test_possible_password_combo_returns_length():
@@ -27,8 +27,8 @@ def test_possible_password_combo_returns_length():
 
 
 def test_contains_special_adjacent_digits_is_true():
-    assert contains_special_adjacent_digits(112233)
+    assert contains_matching_adjacent_digits(112233)
 
 
 def test_contains_special_adjacent_digits_is_false():
-    assert not contains_special_adjacent_digits(123444)
+    assert not contains_matching_adjacent_digits(123444)
