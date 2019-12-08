@@ -30,5 +30,13 @@ def test_contains_special_adjacent_digits_is_true():
     assert contains_matching_adjacent_digits(112233)
 
 
+def test_contains_special_adjacent_digits_is_true_v2():
+    assert contains_matching_adjacent_digits(111122)
+
+
+def test_contains_special_adjacent_digits_is_true_v3():
+    assert contains_matching_adjacent_digits(288999)
+
+
 def test_contains_special_adjacent_digits_is_false():
     assert not contains_matching_adjacent_digits(123444)
