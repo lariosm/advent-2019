@@ -1,11 +1,6 @@
-from secure_container import is_six_digits, contains_adjacent_digits,\
-    digit_increase_check, password_criteria, possible_password_combinations,\
+from secure_container import contains_adjacent_digits, digit_increase_check,\
+    password_criteria, possible_password_combinations,\
     contains_matching_adjacent_digits
-
-
-def test_six_digit_function_works():
-    assert is_six_digits(251903)
-    assert not is_six_digits(3256)
 
 
 def test_contains_adjacent_works():
