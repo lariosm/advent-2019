@@ -28,9 +28,23 @@ def wire_map(wire):
     return path
 
 
+def find_intersections(wire_map, wire_map_two):
+    intersections = []
+    for location in wire_map:
+        for location_two in wire_map_two:
+            if location == location_two:
+                intersections.append(location)
+    return intersections
+
+
 if __name__ == '__main__':
+    wire_map_one = wire_map(wire_one)
+    wire_map_two = wire_map(wire_two)
     print("Wire 1:\n")
-    print(wire_map(wire_one))
+    print(wire_map_one)
     print("\n")
     print("Wire 2:\n")
-    print(wire_map(wire_two))
+    print(wire_map_two)
+    print("\n")
+    print("Intersection list:")
+    print(find_intersections(wire_map_one, wire_map_two))
