@@ -38,10 +38,6 @@ def wire_map(wire):
     return path
 
 
-def find_intersections(wire_map, wire_map_two):
-    return wire_map.intersection(wire_map_two)
-
-
 def manhattan_distance(wire_intersections):
     # Start with an arbitraily large number as min distance
     min_distance = 100000000
@@ -56,14 +52,9 @@ def manhattan_distance(wire_intersections):
 if __name__ == '__main__':
     wire_one, wire_two = inputs_to_arrays()
     wire_map_one = set(wire_map(wire_one))
-    print("Got a map of Wire 1")
     wire_map_two = set(wire_map(wire_two))
-    print("Got a map of Wire 2")
-    intersection_map = find_intersections(wire_map_one, wire_map_two)
-    print("Got a list of intersections")
-    shortest_distance = manhattan_distance(intersection_map)
-    print("Intersection list:")
-    print(intersection_map)
-    print("\n")
+    # Finds intersections between two wires
+    intersections = wire_map_one.intersection(wire_map_two)
+    shortest_distance = manhattan_distance(intersections)
     print("Manhattan distance:")
     print(shortest_distance)
