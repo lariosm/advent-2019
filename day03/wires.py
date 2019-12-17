@@ -37,14 +37,30 @@ def find_intersections(wire_map, wire_map_two):
     return intersections
 
 
+def manhattan_distance(wire_intersections):
+    # Start with an arbitraily large number as min distance
+    min_distance = 100000000
+    for point in wire_intersections:
+        # Manhattan distance formula
+        distance = abs(0 - point[0]) + abs(0 - point[1])
+        if distance < min_distance:
+            min_distance = distance
+    return min_distance
+
+
 if __name__ == '__main__':
     wire_map_one = wire_map(wire_one)
     wire_map_two = wire_map(wire_two)
-    print("Wire 1:\n")
+    intersection_map = find_intersections(wire_map_one, wire_map_two)
+    shortest_distance = manhattan_distance(intersection_map)
+    print("Wire 1:")
     print(wire_map_one)
     print("\n")
-    print("Wire 2:\n")
+    print("Wire 2:")
     print(wire_map_two)
     print("\n")
     print("Intersection list:")
-    print(find_intersections(wire_map_one, wire_map_two))
+    print(intersection_map)
+    print("\n")
+    print("Manhattan distance:")
+    print(shortest_distance)
