@@ -1,7 +1,17 @@
 import re
 
-wire_one = ["R8", "U5", "L5", "D3"]
-wire_two = ["U7", "R6", "D4", "L4"]
+
+def inputs_to_arrays():
+    with open('input.txt') as file:
+        input_one, input_two = file.read().split()
+        input_one, input_two = (list(map(str, input_one.split(","))),
+                                list(map(str, input_two.split(","))))
+        # Testing lists have been split up correctly
+        assert input_one[0] == "R990"
+        assert input_two[0] == "L998"
+        assert input_one[len(input_one) - 1] == "R259"
+        assert input_two[len(input_two) - 1] == "L719"
+    return input_one, input_two
 
 
 def wire_map(wire):
@@ -32,6 +42,7 @@ def find_intersections(wire_map, wire_map_two):
     intersections = []
     for location in wire_map:
         for location_two in wire_map_two:
+            # Do the two wires intersect?
             if location == location_two:
                 intersections.append(location)
     return intersections
@@ -49,16 +60,14 @@ def manhattan_distance(wire_intersections):
 
 
 if __name__ == '__main__':
+    wire_one, wire_two = inputs_to_arrays()
     wire_map_one = wire_map(wire_one)
+    print("Got a map of Wire 1")
     wire_map_two = wire_map(wire_two)
+    print("Got a map of Wire 2")
     intersection_map = find_intersections(wire_map_one, wire_map_two)
+    print("Got a list of intersections")
     shortest_distance = manhattan_distance(intersection_map)
-    print("Wire 1:")
-    print(wire_map_one)
-    print("\n")
-    print("Wire 2:")
-    print(wire_map_two)
-    print("\n")
     print("Intersection list:")
     print(intersection_map)
     print("\n")
