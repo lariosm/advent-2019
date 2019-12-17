@@ -39,13 +39,7 @@ def wire_map(wire):
 
 
 def find_intersections(wire_map, wire_map_two):
-    intersections = []
-    for location in wire_map:
-        for location_two in wire_map_two:
-            # Do the two wires intersect?
-            if location == location_two:
-                intersections.append(location)
-    return intersections
+    return wire_map.intersection(wire_map_two)
 
 
 def manhattan_distance(wire_intersections):
@@ -61,9 +55,9 @@ def manhattan_distance(wire_intersections):
 
 if __name__ == '__main__':
     wire_one, wire_two = inputs_to_arrays()
-    wire_map_one = wire_map(wire_one)
+    wire_map_one = set(wire_map(wire_one))
     print("Got a map of Wire 1")
-    wire_map_two = wire_map(wire_two)
+    wire_map_two = set(wire_map(wire_two))
     print("Got a map of Wire 2")
     intersection_map = find_intersections(wire_map_one, wire_map_two)
     print("Got a list of intersections")
