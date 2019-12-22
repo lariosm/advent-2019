@@ -4,7 +4,7 @@ def intcode_as_array():
     return int_list
 
 
-def perform_list_operation(noun=12, verb=2):
+def list_operation(noun=12, verb=2):
     intcode_list = intcode_as_array()
 
     # Preliminary data swap as requested by puzzle
@@ -35,10 +35,10 @@ def perform_list_operation(noun=12, verb=2):
 def search_noun_verb():
     for noun in range(100):
         for verb in range(100):
-            if(perform_list_operation(noun, verb) == 19690720):
+            if(list_operation(noun, verb) == 19690720):
                 return 100 * noun + verb
 
 
 if __name__ == '__main__':
-    print(perform_list_operation())  # part 1
+    print(list_operation())  # part 1
     print(search_noun_verb())  # part 2
